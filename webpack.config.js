@@ -1,4 +1,5 @@
 const path = require('path')
+const HTMLPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -16,5 +17,11 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
-    }
+    },
+    plugins: [
+        new HTMLPlugin({
+            title: 'webpack-starter',
+            filename: 'index.html'
+        })
+    ]
 }
