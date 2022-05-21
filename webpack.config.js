@@ -21,6 +21,7 @@ module.exports = {
         open: false,
         historyApiFallback: true
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {
