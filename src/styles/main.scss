@@ -23,7 +23,10 @@ body {
 }
 
 #joke-display {
+  max-width: 60%;
+
   font-weight: normal;
+  text-align: center;
 }
 
 #joke-button {
