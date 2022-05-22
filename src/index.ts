@@ -5,13 +5,18 @@ import './styles/main.scss'
 const jokeButton = document.getElementById('joke-button')
 const jokeDisplay = document.getElementById('joke-display')
 
-const insertContent = (element, content) => {
-    element.innerHTML = content
+const insertContent = (element: HTMLElement | null, content: string) => {
+    if(element) {
+        element.innerHTML = content
+        return
+    }
+
+    throw new Error("Element doesn't exist")
 }
 
 const getJoke = async ()=> {
     try {
-        const { joke: newJoke } = await fetchJoke()
+        const newJoke  = await fetchJoke()
 
         insertContent(jokeDisplay, newJoke)
     } catch(err) {
@@ -19,6 +24,6 @@ const getJoke = async ()=> {
     }
 }
 
-jokeButton.addEventListener('click', getJoke)
+if(jokeButton) jokeButton.addEventListener('click', getJoke)
 
 getJoke()
