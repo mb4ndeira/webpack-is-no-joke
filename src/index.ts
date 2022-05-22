@@ -24,6 +24,6 @@ const getJoke = async ()=> {
     }
 }
 
-if(jokeButton) jokeButton.addEventListener('click', getJoke)
+if(jokeButton) jokeButton.addEventListener('click', function handleGetAnotherJoke () { getJoke() })
 
 getJoke()
