@@ -40,8 +40,16 @@ module.exports = {
             {
                 test: /\.(png|svg|jpeg|gif)$/i,
                 type: 'asset/resource'
+            },
+            { 
+                test: /\.ts?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             }
         ]
+    },
+    resolve: {
+        extensions: ['.ts', '.js']
     },
     plugins: [
         new HTMLPlugin({
